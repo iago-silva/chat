@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   namespace :user do
-    root to: redirect("user/chatrooms/1")
+    root to: redirect('user/chatrooms/1')
 
     resources :chatrooms
     resources :messages

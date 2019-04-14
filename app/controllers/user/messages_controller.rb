@@ -1,6 +1,6 @@
 class User::MessagesController < User::UserBaseController
   def create
-    message = Message.new(message_params)
+    message = Message.create(message_params)
     message.user = current_user
 
     return unless message.save
