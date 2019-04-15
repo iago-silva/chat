@@ -5,7 +5,7 @@ class User::MessagesController < User::UserBaseController
 
     return unless message.save
 
-    ActionCable.server.broadcast 'messages',
+    ActionCable.server.broadcast "messages_#{message.chatroom.id}",
                                  message: message.content,
                                  user: message.user.username
     head :ok
